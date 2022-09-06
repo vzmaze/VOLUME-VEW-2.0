@@ -1,0 +1,710 @@
+html { scroll-behavior:smooth } /* плавная прокрутка */
+
+* {
+    box-sizing: border-box;
+    background-color: #303030;
+    margin: 0 0;
+}
+
+body {
+    width: 1900px;
+    /* max-width: 2400px;
+    min-width: 1400px; */
+    position: relative;
+    margin: 0 auto;
+    /* border: 1px solid white; */
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: unset;
+}
+
+#logo_div {
+    width: 580px;
+    margin: 85px auto;
+    margin-bottom: 0;
+    text-align: center;
+    /* border: 1px solid white; */
+}
+#logo_div img {
+    position: relative;
+    top: 12px;
+}
+
+h1{
+    font-family: "Playfair Display SC", "Times New Roman", serif;
+    text-align: center;
+    font-size: 60px;
+}
+
+#logo {
+    color: #b69b67;
+    font-weight: lighter;
+}
+#logo_div h2 {
+    float: right;
+    background-color: transparent;
+}
+.h2 {
+    font-weight:300;
+    font-size: 30px;
+    font-family: "Ubuntu", sans-serif;
+    color: #b4b4b4;
+}
+#bulb_div {
+    margin: 0 auto;
+    width: 700px;
+    height: 412px;
+    margin-top: 30px;
+    background:
+        url("img/bulb_eye.png"),#303030;
+    background-blend-mode:screen;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 700px auto;
+}
+
+#slogan h1 {
+    width: 55%;
+    margin: 0 auto;
+    font-size: 66px;
+    font-family: 'Ubuntu', 'Arial', sans-serif;
+    text-transform:uppercase;
+    font-weight: 300;
+    background-position: center;
+    background-size: 50% 50%;
+    background: radial-gradient(circle at center, #515151, #383838),
+    radial-gradient(circle at center, #bba57b, rgba(0, 0, 0, 0) 75%);
+    background-blend-mode:lighten;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+#scroll_down_title {
+    font-family: 'Ubuntu', 'Arial', sans-serif;
+    font-size: 20px;
+    color: #454545;
+    text-align: center;
+    font-weight: 400;
+    margin-top: 90px;
+}
+
+#go_down {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+}
+
+#arrow_down {
+    width: 48px;
+    height: auto;
+    margin: 0 auto;
+    padding-top: 14px;
+    cursor: pointer;
+}
+
+.width_of_window { /* стандартное положение и ширина */
+    width: 1522px;
+    /* border: 1px solid gray; */
+    /* margin-left: 181px; */
+    margin: 0 auto;
+}
+
+/* МЕНЮ */
+
+/* Кнопка */
+#menu_btn_frame {
+    width: 80px;
+    height: 80px;
+    border: 1px solid #454545;
+    position: absolute;
+    right: 200px;
+    top: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-evenly;
+    align-items: center;
+    z-index: 1;
+}
+
+#menu_btn_frame:hover {
+    border: 1px solid #b49c6e;
+    cursor: pointer;
+}
+.menu_btn_line {
+    border: 1px solid #a4a4a4;
+    width: 50px;
+}
+/* Класс, который добавляется и удаляется в JS */
+.menu_btn_line_orange {
+    border: 1px solid #b49c6e;
+}
+/* Класс, который добавляется и удаляется в JS */
+.menu_btn_line_longer {
+    width: 70px;
+    position: absolute;
+}
+
+.window {
+    position: absolute;
+    overflow-y:none;
+    display: none; /* Меняем с помощью JavaScript */
+}
+#menu_div {
+    width: 1522px;
+    height: 690px;
+    border: 1px solid #454545;
+    top: 150px;
+    right: 200px;
+    opacity: 0;
+}
+.h1_gray {
+    color: #b4b4b4;
+    font-weight: 600;
+    margin-top: 25px;
+    padding: 0;
+}
+
+.lists_menu_like { /* Класс для разных меню */
+    display: flex;
+    justify-content: space-between;
+}
+
+#menu_elements {
+    display: flex;
+    justify-content: space-between;
+    background: url("img/menu_bckgr.png"), #303030;
+    background-position: 475px -90px;
+    background-blend-mode: lighten;
+}
+
+#menu_div ul {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 700px;
+    height: 550px;
+    padding-left: 130px;
+    padding-right: 0;
+}
+#menu_div ul li {
+    margin-top: 35px;
+}
+#menu_div ul li:hover {
+    cursor: pointer;
+    text-decoration-line: overline;
+    text-decoration-thickness: 0.5px;
+    color: #b69b67;
+}
+
+.sign_in_up {
+    color: #665431;
+}
+#search_div {
+    display: flex;
+    justify-content: space-between;
+    height: 35px;
+    margin-right: 130px;
+    margin-top: 35px;
+    background: none;
+}
+#search_div img {
+    width: 25px;
+    height: 25px;
+    position: relative;
+    right: 25px;
+    top: 5px;
+}
+#search {
+    display: block;
+    width: 490px;
+    color: #454545;
+    background: none;
+    border-bottom: 1px solid #454545;
+}
+
+/* окно sign in */
+#sign_in_window {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #b4b4b4;
+    width: 845px;
+    height: 675px;
+    position: absolute;
+    top: 250px;
+    left: 28%;
+    opacity: 0;
+}
+/* Кнопка закрыть */
+#window_btn_frame {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #b4b4b4;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+#window_btn_frame:hover {
+    border: 1px solid #b49c6e;
+
+}
+#window_btn_frame hr:first-child, #window_btn_frame hr:last-child {
+    position: absolute;
+    width: 40px;
+    border: 1px solid #b4b4b4;
+    transform: rotate(45deg);
+}
+#window_btn_frame hr:last-child {
+    transform: rotate(-45deg);
+}
+
+#sign_in_window h2 {
+    text-align: center;
+    margin-top: 30px;
+}
+#smedia_sign_up_btns {
+    width: 745px;
+    height: 72px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.smedia_btn {
+    width: 230px;
+    font-family: 'Ubuntu', 'Arial', sans-serif;
+    font-size: 30px;
+    font-weight: 200;
+}
+
+#facebook_sgn_btn {
+    color: #3b5998;
+    border: 1px solid #3b5998;
+}
+#facebook_sgn_btn:hover{
+    background-color: #3b5998;
+    color: #303030;
+    cursor: pointer;
+}
+
+#google_sgn_btn {
+    color: #dd4b39;
+    border: 1px solid #dd4b39;
+}
+#google_sgn_btn:hover{
+    background-color: #dd4b39;
+    color: #303030;
+    cursor: pointer;
+}
+
+#twitter_sgn_btn {
+    color: #1da1f2;
+    border: 1px solid #1da1f2;
+}
+#twitter_sgn_btn:hover{
+    background-color: #1da1f2;
+    color: #303030;
+    cursor: pointer;
+}
+
+#sign_in_window h2:last-child {
+    margin-top: 40px;
+}
+.sign_in {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.input {
+    width: 745px;
+    height: 72px;
+    margin-bottom: 25px;
+    border: 1px solid #a4a4a4;
+    font-family: 'Ubuntu', 'Arial', sans-serif;
+    font-size: 30px;
+    font-weight: 200;
+    color: #ffffff;
+    padding-left: 25px;
+}
+#input::placeholder {
+    color: #454545;
+}
+
+#input_pass {
+    width: 485px;
+}
+#submit_btn {
+    width: 230px;
+    margin-left: 30px;
+    padding: 0;
+}#submit_btn:hover {
+    background-color: #b69b67;
+    color: #303030;
+    cursor: pointer;
+}
+
+/* Раздел SERVICES */
+#services {
+    background: url("img/services/service_1_test.jpg"), #303030;
+    background-position: 60% 60%;
+    background-repeat: no-repeat;
+    background-blend-mode: lighten;
+    background-size: 60%;
+    height: 1000px;
+    margin: 0 auto;
+}
+
+#services_header {
+    margin-top: 155px;
+    margin-bottom: 10px;
+}
+#services_list {
+    width: 1215px;
+    justify-content: flex-start;
+    background-color: transparent;
+    /* border: 1px solid red; */
+}
+#services_list ul {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 520px;
+    margin-right: 15px;
+    height: 620px;
+    padding-right: 0;
+    background-color: transparent;
+    z-index: 2;
+    /* border: 1px solid white; */
+}
+.services_li {
+    margin-top: 60px;
+    background-color: transparent;
+
+}
+
+.services_li:hover {
+    text-decoration-line: overline;
+    text-decoration-thickness: 0.5px;
+    color: #b69b67;
+}
+#services_list ul li:hover {
+
+    cursor: pointer;
+}
+
+.services_selected {
+    text-decoration-line: overline;
+    text-decoration-thickness: 0.5px;
+    font-size: 60px;
+    margin-top: 25px;
+    color: #b69b67;
+    border-bottom: 1px solid #454545;
+}
+
+.service_description {
+    font-family: "Ubuntu", "Arial", sans-serif;
+    font-size: 20px;
+    font-weight: lighter;
+    text-align: justify;
+    color: #b4b4b4;
+    background-color: transparent;
+    width: 500px;
+    /* border: 1px solid blue; */
+    height: auto;
+    opacity: 0; /* делаем по-умолчанию прозрачным */
+}
+
+.service_descr_block {
+    display: flex;
+    flex-direction: column;
+    margin-top: 65px;
+    background-color: transparent;
+    z-index: 1;
+}
+.service_description span {
+    color: #b69b67;
+    background-color: transparent;
+}
+
+
+
+/* --------------  PORTFOLIO -------------- */
+
+#portfolio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 500px;
+}
+#portfolio_sel {
+    display: block;
+    width: 280px;
+    height: 55px;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 70px;
+    border: 1px solid #454545;
+    appearance: none;
+    outline: none;
+    background-color: rgb(39, 202, 21);
+    background: no-repeat 96% 55% / 27px url("./img/down_arrow.png");
+}
+#portfolio_sel:hover {
+    color:#b49c6e;
+    border: 1px solid #b49c6e;
+    background: no-repeat 96% 55% / 27px url("./img/down_arrow_orange.png");
+    cursor: pointer;
+}
+#portfolio_sel option {
+    font-weight: 200;
+    color: #b4b4b4;
+}
+
+
+#portfolio_block {
+    display: flex;
+    /* border: 1px solid #2568b0; */
+    flex-wrap: wrap;
+    width: 100%;
+    height: 570px;
+    justify-content: space-between;
+    align-content:space-between;
+}
+.portfolio_example {
+    display: flex;
+    /* width: 745px; */
+    width: 49%;
+    height: 47.5%;
+    /* border: 1px solid #af0b0b; */
+    align-items: center;
+    justify-content: flex-end;
+    background-blend-mode:saturation;
+    background-position: top center;
+    background-repeat: no-repeat;
+    transition-duration: .5s;
+}
+
+.see_full_project {
+    cursor: pointer;
+    display: none;
+    margin: 0 auto;
+    background-color: #b69b67;
+    color: #303030;
+    font-weight: 400;
+    width: 307px;
+    height: 71px;
+    justify-content: center;
+    align-items: center;
+}
+
+.cover {
+    display: block;
+    position: absolute;
+    width: 358px;
+    height: 270px;
+    background-color: #b69b67;
+}
+.cover p {
+    font-family: "Ubuntu", "Arial", sans-serif;
+    background: transparent;
+    color: #303030;
+    font-weight: 500;
+    padding: 25px;
+}
+.small_text, .italic_text {
+    font-size: 15px;
+}
+.italic_text {
+    font-style: oblique;
+    font-weight: 200 !important;
+    text-align: right;
+}
+
+#portfolio_pages {
+    display: flex;
+    justify-content:space-around;
+    width: 200px;
+    color: #b4b4b4;
+    font-family: "Ubuntu", "Arial", sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 45px;
+}
+.pointer {
+    cursor: pointer;
+}
+.pointer:hover {
+    color: #b69b67;
+}
+
+/* FEEDBACK */
+#feedback_section {
+    margin-top: 90px;
+    display: flex;
+    justify-content:flex-start;
+    background: url("./img/feedback/feedback_background.png"), #303030;
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    background-blend-mode: lighten;
+    background-position-x: 105.2%;
+    background-position-y: 97%;
+
+}
+#feedback_section h1{
+    margin-bottom: 45px;
+}
+#feedback_section h2 {
+    text-align: right;
+    color: #b69b67;
+    text-transform: uppercase;
+    margin-bottom: 100px;
+}
+#feedback_section h2:last-child {
+    margin-bottom: 50px;
+}
+#img_and_p {
+    display: flex;
+    width: 745px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #b69b67;
+    margin-bottom: 10px;
+}
+#img_and_p img {
+    width: 100px;
+    height: 100px;
+}
+#img_and_p p {
+    width: 645px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+#feedback_footer {
+    color: #b4b4b4;
+    font-family: "Ubuntu", "Arial", sans-serif;
+    font-size: 15px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+#feedback_footer:hover {
+    cursor: pointer;
+}
+form {
+    background-color: transparent;
+}
+#contact_us {
+    background-color: transparent;
+    margin-left: 160px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    width: 485px;
+}
+#contact_us input, #contact_us textarea {
+    width: 485px;
+}
+textarea {
+    padding-top: 20px;
+}
+.input::placeholder {
+    color: #676767;
+}
+
+#contact_us textarea {
+    height: 300px;
+}
+
+#send_btn {
+    width: 225px !important;
+    padding-left: 0;
+    background-color: #b69b67;
+    color: black;
+    border: 0px solid #b69b67;
+}#send_btn:hover {
+    background-color: transparent;
+    color: #b69b67;
+    border: 1px solid #b69b67;
+    cursor: pointer;
+}
+
+/* CONTACS */
+#contacts {
+    margin-top: 100px;
+}
+#contacts_div {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 80px;
+}
+.contact_type {
+    text-align: center;
+    width: 470px;
+    line-height: 1.5;
+}
+div.contact_type h2:first-child {
+    color: #b69b67;
+    text-decoration: overline;
+    text-decoration-thickness: 0.5px;
+    margin-bottom: 25px;
+}
+
+/* FOOTER */
+footer {
+    width: 100%;
+    height: 800px;
+    background: url("./img/contacts/contacts_background.jpg"), #303030;
+    background-position: center 75%;
+    background-blend-mode: lighten;
+}
+.slogan {
+    margin: 0 auto;
+    font-size: 60px;
+    font-family: 'Ubuntu', 'Arial', sans-serif;
+    text-transform:uppercase;
+    font-weight: 300;
+    background-position: center;
+    background-size: 50% 50%;
+    background-blend-mode:lighten;
+    -webkit-text-fill-color: transparent;
+}
+#footer_slogan {
+    padding-top: 600px;
+    width: 90%;
+    margin-bottom: 90px;
+    background: radial-gradient(circle at center, #8c8c8c, #383838),
+    radial-gradient(circle at center, #d2ba8b, rgba(0, 0, 0, 0) 70%);
+    -webkit-background-clip: text;
+}
+#footer_links {
+    list-style-type: none;
+    display: flex;
+    width: 84%;
+    justify-content:space-evenly;
+    margin: 0 auto;
+    padding: 0;
+}
+#footer_links li {
+    color: #b4b4b4;
+    font-family: "Ubuntu", "Arial", sans-serif;
+    font-style: 15px;
+    text-transform: uppercase;
+}
+#footer_links li:hover {
+    cursor: pointer;
+    color:#b49c6e;
+}
+
+#underfooter {
+    width: 100%;
+    height: 800px;
+    background: url("./img/contacts/footer_background.jpg"), #303030;
+    background-position: center 75%;
+    background-repeat: no-repeat;
+    background-blend-mode: lighten;
+}
